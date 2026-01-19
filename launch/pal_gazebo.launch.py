@@ -193,7 +193,7 @@ def generate_launch_description():
     ld.add_action(declare_world_name)
     ld.add_action(declare_clock_rate)
     ld.add_action(CommonArgs.gzclient)
-    ld.add_action(CommonArgs.gazebo_version)
+    ld.add_action(DeclareLaunchArgument("gazebo_version", default_value="classic", description="Fixed manually"))
 
     ld.add_action(OpaqueFunction(function=start_gazebo))
 
