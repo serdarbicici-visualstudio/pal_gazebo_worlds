@@ -3455,6 +3455,55 @@
         </visual>
       </link>
     </model>
+    <!-- Red book on another table -->
+    <model name='red_book_1'>
+      <pose>0.0 -0.872521 1.15 0 0 0</pose>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.25</mass>
+          <inertia>
+            <ixx>0.000041667</ixx>
+            <ixy>0.000000</ixy>
+            <ixz>0.000000</ixz>
+            <iyy>0.000041667</iyy>
+            <iyz>0.000000</iyz>
+            <izz>0.000041667</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <box><size>0.05 0.22 0.30</size></box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>60.0</mu>
+                <mu2>60.0</mu2>
+              </ode>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1000000.0</kp>
+                <kd>100.0</kd>
+                <max_vel>1.0</max_vel>
+                <min_depth>0.0025</min_depth>
+              </ode>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box><size>0.05 0.22 0.30</size></box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.1 0.1 1</ambient>
+            <diffuse>0.9 0.1 0.1 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
     <actor name='walker1'>
       <skin>
         <filename>file:///root/ros2_ws/src/pal_gazebo_worlds/human/meshes/walk.dae</filename>
